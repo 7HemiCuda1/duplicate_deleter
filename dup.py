@@ -2,7 +2,7 @@ import os, sys
 import hashlib, ntpath
 
 #TODO: Need to add an option to search other directories for possible duplicates.
-folders = ["C:\Users"]
+folders = ["C:\\"]
 
 def findDup(parentFolder):
 	"""
