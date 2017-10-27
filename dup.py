@@ -79,40 +79,40 @@ def delete_duplicates(results):
 			# print theval
 			# print os.path.basename(file)
 			if theval.find("(1)") != -1:
-				print "found {f}".format(f=file)
+				print("found {f}".format(f=file))
 				files_to_delete.append(file)
 			elif theval.find("(2)") != -1:
-				print "found {f}".format(f=file)
+				print("found {f}".format(f=file))
 				files_to_delete.append(file)
 			elif theval.find("(3)") != -1:
-				print "found {f}".format(f=file)
+				print("found {f}".format(f=file))
 				files_to_delete.append(file)
 			else:
 				files_to_not_delete.append(file)
 
 	#TODO Need to check the list of files to see if it is a duplicate. 
-	print "Report: \n"
-	print "number of files to delete = {numd}\n" \
-		  "number of files to total = {numt}\n" \
+	print("Report: \n")
+	print ("number of files to delete = {numd}\n"
+		  "number of files to total = {numt}\n"
 		  "number of files to keep = {numk}".format(
-		numd=len(files_to_delete),numt=len(results), numk=len(files_to_not_delete))
-	print "*" * 100
+		numd=len(files_to_delete),numt=len(results), numk=len(files_to_not_delete)))
+	print("*" * 100)
 	for file in files_to_not_delete:
-		print "Do not delete {f}".format(f=file)
-	print "*" * 100
+		print("Do not delete {f}".format(f=file))
+	print("*" * 100)
 	delete_files(files_to_delete)
 
 
 def delete_files(files):
-	print "This is the files to delete"
+	print("This is the files to delete")
 	for file in files:
-		print file
-	result = raw_input("Do you want to delete these files?")
+		print(file)
+	result = input("Do you want to delete these files?")
 	# print result
 	if result == "y":
 		for file in files:
 			os.remove(file)
-			print "{f} Deleted! ".format(f=file)
+			print("{f} Deleted! ".format(f=file))
 
 
 def path_leaf(path):
@@ -130,12 +130,12 @@ def printResults(dict1):
 			for subresult in result:
 				print('\t\t%s' % subresult)
 			print('___________________')
-		answer = raw_input("Do you want to delete all the files that have (1) in them?")
-		print answer
+		answer = input("Do you want to delete all the files that have (1) in them?")
+		print (answer)
 		if answer == "y":
 			delete_duplicates(results)
 		else:
-			print "OK! "
+			print("OK! ")
 	else:
 		print('No duplicate files found.')
 
