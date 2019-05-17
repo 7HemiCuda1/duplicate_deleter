@@ -1,7 +1,7 @@
 import os, sys
 import hashlib, ntpath
 
-#TODO: Need to add an option to search other directories for possible duplicates.
+#TODO: Need to add an option to search other directories for possible duplicates. this
 folders = ["C:\Users\jwells\Google Drive\Jds Echopass Folder\Documentation\EPFILE BACKUP"]
 
 def findDup(parentFolder):
